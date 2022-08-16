@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
-
+import {Layout} from '../components/layouts'
 const HomePage: NextPage = () => {
   return (
-   <>
-     <h1>Hello world!</h1>
-   </>
+    <Layout>
+      <h1>Hello world!</h1>
+    </Layout>
   )
 }
 
