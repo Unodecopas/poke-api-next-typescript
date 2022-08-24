@@ -1,8 +1,10 @@
-import { Text, useTheme } from "@nextui-org/react"
-import Image from "next/image"
-
+import {Button, Container, Link, Text, useTheme } from '@nextui-org/react'
+import logo from '../../assets/logo.png'
+import Image from 'next/image'
+import NextLink from "next/link"
 
 export const Navbar = () => {
+  
   const { theme } = useTheme()
   return (
     <div style={{
@@ -10,18 +12,22 @@ export const Navbar = () => {
       width: '100%',
       flexDirection: 'row',
       alignItems: 'center',
-      justifyContent:'start',
-      padding: '0px 20px',
+      justifyContent:'space-around',
+      padding: '0px 50px',
       backgroundColor: theme?.colors.gray900.value
     }}>
-      <Image 
-        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
-        alt='Sprite de Charizard'
-        width={50}
-        height={50}
-      />
-      <Text color="white" h2 >P</Text>
-      <Text color="white" h3 >okemon</Text>
+      <Container display='flex' justify='flex-start' alignItems='center'>
+      <NextLink href='/' passHref>
+        <Link>
+          <Image src={logo} alt='LogoPokemon' width={200} height={100} objectFit='contain' quality={100}/>
+        </Link>
+      </NextLink>
+      </Container>
+      <NextLink href='/favorites' passHref>
+        <Link  css={{paddingRigth: 16}}>
+          <Button bordered color='success' ghost auto>Favoritos</Button>
+        </Link>
+      </NextLink>
     </div>
   )
 }

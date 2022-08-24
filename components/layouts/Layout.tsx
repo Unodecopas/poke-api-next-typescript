@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { FC } from "react"
+import { FC } from 'react'
 import {Navbar} from '../ui'
 interface Props {
   title?: string
